@@ -1959,11 +1959,11 @@ angular.module('markdown', [])
 
       function destroy() {
         self.deactivate();
-        setTimeout(function() {
+        $timeout(function() {
           scope.$destroy();
           element.remove();
           destroyed = true;
-        }, 3000);
+        }, 0, false);
         foundationApi.unsubscribe(id);
       }
 
